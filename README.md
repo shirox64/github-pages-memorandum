@@ -3,5 +3,5 @@
 ## Sphinxのビルド
 ```
 make html
-cp -r build/html docs
+cp -r build/html/ docs
 ```
