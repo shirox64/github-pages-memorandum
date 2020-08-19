@@ -11,3 +11,10 @@
    :caption: Contents:
 
    sphinx
+   vi
+   shell
+   python
+   numpy
+   pandas
+   pytorch
+   keras
