@@ -2,7 +2,7 @@
 
 ## Sphinxのビルド
 ```
-make html
+sphinx-build -b html source docs/
 ```
 
 ## 自動ビルド

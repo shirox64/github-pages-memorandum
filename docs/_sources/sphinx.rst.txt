@@ -67,8 +67,8 @@ Sphinxの使い方
 
 自動ビルド
 ^^^^^^^^^^
-| 編集する度にビルドして確認するのは効率が悪いのでsphinx-autobuildを利用します。
-| sphinx-autobuildのインストールコマンドは下記になります。 ::
+編集する度にビルドして確認するのは効率が悪いのでsphinx-autobuildを利用します。
+sphinx-autobuildのインストールコマンドは下記になります。 ::
 
   pip install sphinx-autobuild
 
@@ -87,81 +87,22 @@ GitHub Pagesで公開
 
 GitHubでGitHub Pagesの設定
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-| GitHub Pagesの設定は対象のリポジトリのページのSettingsタブを選択して少し下にスクロールするとあります。
-| GitHub Pagesで公開するソースのディレクトリはリポジトリ直下もしくはリポジトリ直下のdocsを選択できるみたいです。
+GitHub Pagesの設定は対象のリポジトリのページのSettingsタブを選択して少し下にスクロールするとあります。
+公開するソースのディレクトリはリポジトリ直下もしくはリポジトリ直下のdocsを選択できるみたいです。
 
 .. image:: img/sphinx001.png
 
-Sphinxのビルドの設定
-^^^^^^^^^^^^^^^^^^^^^^^^^
-| Sphinxのビルドしたファイルはデフォルトだとbuildディレクトリに作成されるのでMakefileとmake.batを修正し、docsディレクトリに作成されるように変更します。
-Makefile ::
-
-  # Minimal makefile for Sphinx documentation
-  #
-
-  # You can set these variables from the command line, and also
-  # from the environment for the first two.
-  SPHINXOPTS    ?=
-  SPHINXBUILD   ?= sphinx-build
-  SOURCEDIR     = source
-  BUILDDIR      = docs
-
-  # Put it first so that "make" without argument is like "make help".
-  help:
-    @$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-
-  .PHONY: help Makefile
-
-  # Catch-all target: route all unknown targets to Sphinx using the new
-  # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-  %: Makefile
-    @$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-
-make.bat ::
-
-  @ECHO OFF
-
-  pushd %~dp0
-
-  REM Command file for Sphinx documentation
-
-  if "%SPHINXBUILD%" == "" (
-    set SPHINXBUILD=sphinx-build
-  )
-  set SOURCEDIR=source
-  set BUILDDIR=docs
-
-  if "%1" == "" goto help
-
-  %SPHINXBUILD% >NUL 2>NUL
-  if errorlevel 9009 (
-    echo.
-    echo.The 'sphinx-build' command was not found. Make sure you have Sphinx
-    echo.installed, then set the SPHINXBUILD environment variable to point
-    echo.to the full path of the 'sphinx-build' executable. Alternatively you
-    echo.may add the Sphinx directory to PATH.
-    echo.
-    echo.If you don't have Sphinx installed, grab it from
-    echo.http://sphinx-doc.org/
-    exit /b 1
-  )
-
-  %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
-  goto end
-
-  :help
-  %SPHINXBUILD% -M help %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
-
-  :end
-  popd
-
 .nojekyllファイルの作成
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-| GitHib PagesはJekyIIが使われており、_staticなどにあるファイルを読み取ることができないのでsphinxのcssが適用されません。
-| そこでリポジトリの直下に.nojekyllというから空ファイルを配置する必要があります。
+GitHib PagesはJekyIIが使われており、_staticなどにあるファイルを読み取ることができないのでsphinxのcssが適用されません。
+そこでリポジトリの直下に.nojekyllというから空ファイルを配置する必要があります。
+
+Sphinxのビルド
+^^^^^^^^^^^^^^^^^^^^^^^^^
+make htmlだとbuildディレクトにファイルが生成されるのでdocsディレクトリに生成されるように下記のコマンドを実行します。 ::
+
+  sphinx-build -b html source docs/
 
 ソースの公開
 ^^^^^^^^^^^^
-| 上記の設定が終われば、後はビルドしてプッシュするだけです。
-| https://[ユーザ名].github.io/[リポジトリ名]/index.html にアクセスすると作成したドキュメントが確認できます。
+ビルドが完了すれば、後はプッシュするだけです。
