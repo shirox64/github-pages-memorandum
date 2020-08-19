@@ -94,7 +94,13 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id7">Sphinxの書き方</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#github-pages">Github Pagesで公開</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#github-pages">GitHub Pagesで公開</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#githubgithub-pages">GitHubでGitHub Pagesの設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Sphinxのビルドの設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nojekyll">.nojekyllファイルの作成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">ソースの公開</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -231,11 +237,13 @@ https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language �
 </div>
 <div class="section" id="id6">
 <h3>自動ビルド<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>編集する度にビルドして確認するのは効率が悪いのでsphinx-autobuildを利用します。
-sphinx-autobuildのインストールコマンドは下記になります。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">autobuild</span>
-</pre></div>
+<div class="line-block">
+<div class="line">編集する度にビルドして確認するのは効率が悪いのでsphinx-autobuildを利用します。</div>
+<div class="line">sphinx-autobuildのインストールコマンドは下記になります。 ::</div>
 </div>
+<blockquote>
+<div><p>pip install sphinx-autobuild</p>
+</div></blockquote>
 <p>下記のコマンドで自動的にビルトとブラウザの再リロードをしてくれるようになります。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sphinx</span><span class="o">-</span><span class="n">autobuild</span> <span class="o">-</span><span class="n">b</span> <span class="n">html</span> <span class="n">source</span> <span class="n">build</span><span class="o">/</span><span class="n">html</span>
 </pre></div>
@@ -248,8 +256,96 @@ sphinx-autobuildのインストールコマンドは下記になります。</p>
 <p>後日更新予定</p>
 </div>
 <div class="section" id="github-pages">
-<h2>Github Pagesで公開<a class="headerlink" href="#github-pages" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>後日更新予定</p>
+<h2>GitHub Pagesで公開<a class="headerlink" href="#github-pages" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="githubgithub-pages">
+<h3>GitHubでGitHub Pagesの設定<a class="headerlink" href="#githubgithub-pages" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">GitHub Pagesの設定は対象のリポジトリのページのSettingsタブを選択して少し下にスクロールするとあります。</div>
+<div class="line">GitHub Pagesで公開するソースのディレクトリはリポジトリ直下もしくはリポジトリ直下のdocsを選択できるみたいです。</div>
+</div>
+<img alt="_images/sphinx001.png" src="_images/sphinx001.png" />
+</div>
+<div class="section" id="id8">
+<h3>Sphinxのビルドの設定<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">Sphinxのビルドしたファイルはデフォルトだとbuildディレクトリに作成されるのでMakefileとmake.batを修正し、docsディレクトリに作成されるように変更します。</div>
+</div>
+<p>Makefile</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Minimal makefile for Sphinx documentation
+#
+
+# You can set these variables from the command line, and also
+# from the environment for the first two.
+SPHINXOPTS    ?=
+SPHINXBUILD   ?= sphinx-build
+SOURCEDIR     = source
+BUILDDIR      = docs
+
+# Put it first so that &quot;make&quot; without argument is like &quot;make help&quot;.
+help:
+  @$(SPHINXBUILD) -M help &quot;$(SOURCEDIR)&quot; &quot;$(BUILDDIR)&quot; $(SPHINXOPTS) $(O)
+
+.PHONY: help Makefile
+
+# Catch-all target: route all unknown targets to Sphinx using the new
+# &quot;make mode&quot; option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
+%: Makefile
+  @$(SPHINXBUILD) -M $@ &quot;$(SOURCEDIR)&quot; &quot;$(BUILDDIR)&quot; $(SPHINXOPTS) $(O)
+</pre></div>
+</div>
+<p>make.bat</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@ECHO</span> <span class="n">OFF</span>
+
+<span class="n">pushd</span> <span class="o">%~</span><span class="n">dp0</span>
+
+<span class="n">REM</span> <span class="n">Command</span> <span class="n">file</span> <span class="k">for</span> <span class="n">Sphinx</span> <span class="n">documentation</span>
+
+<span class="k">if</span> <span class="s2">&quot;%SPHINXBUILD%&quot;</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="p">(</span>
+  <span class="nb">set</span> <span class="n">SPHINXBUILD</span><span class="o">=</span><span class="n">sphinx</span><span class="o">-</span><span class="n">build</span>
+<span class="p">)</span>
+<span class="nb">set</span> <span class="n">SOURCEDIR</span><span class="o">=</span><span class="n">source</span>
+<span class="nb">set</span> <span class="n">BUILDDIR</span><span class="o">=</span><span class="n">docs</span>
+
+<span class="k">if</span> <span class="s2">&quot;%1&quot;</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="n">goto</span> <span class="n">help</span>
+
+<span class="o">%</span><span class="n">SPHINXBUILD</span><span class="o">%</span> <span class="o">&gt;</span><span class="n">NUL</span> <span class="mi">2</span><span class="o">&gt;</span><span class="n">NUL</span>
+<span class="k">if</span> <span class="n">errorlevel</span> <span class="mi">9009</span> <span class="p">(</span>
+  <span class="n">echo</span><span class="o">.</span>
+  <span class="n">echo</span><span class="o">.</span><span class="n">The</span> <span class="s1">&#39;sphinx-build&#39;</span> <span class="n">command</span> <span class="n">was</span> <span class="ow">not</span> <span class="n">found</span><span class="o">.</span> <span class="n">Make</span> <span class="n">sure</span> <span class="n">you</span> <span class="n">have</span> <span class="n">Sphinx</span>
+  <span class="n">echo</span><span class="o">.</span><span class="n">installed</span><span class="p">,</span> <span class="n">then</span> <span class="nb">set</span> <span class="n">the</span> <span class="n">SPHINXBUILD</span> <span class="n">environment</span> <span class="n">variable</span> <span class="n">to</span> <span class="n">point</span>
+  <span class="n">echo</span><span class="o">.</span><span class="n">to</span> <span class="n">the</span> <span class="n">full</span> <span class="n">path</span> <span class="n">of</span> <span class="n">the</span> <span class="s1">&#39;sphinx-build&#39;</span> <span class="n">executable</span><span class="o">.</span> <span class="n">Alternatively</span> <span class="n">you</span>
+  <span class="n">echo</span><span class="o">.</span><span class="n">may</span> <span class="n">add</span> <span class="n">the</span> <span class="n">Sphinx</span> <span class="n">directory</span> <span class="n">to</span> <span class="n">PATH</span><span class="o">.</span>
+  <span class="n">echo</span><span class="o">.</span>
+  <span class="n">echo</span><span class="o">.</span><span class="n">If</span> <span class="n">you</span> <span class="n">don</span><span class="s1">&#39;t have Sphinx installed, grab it from</span>
+  <span class="n">echo</span><span class="o">.</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">sphinx</span><span class="o">-</span><span class="n">doc</span><span class="o">.</span><span class="n">org</span><span class="o">/</span>
+  <span class="n">exit</span> <span class="o">/</span><span class="n">b</span> <span class="mi">1</span>
+<span class="p">)</span>
+
+<span class="o">%</span><span class="n">SPHINXBUILD</span><span class="o">%</span> <span class="o">-</span><span class="n">M</span> <span class="o">%</span><span class="mi">1</span> <span class="o">%</span><span class="n">SOURCEDIR</span><span class="o">%</span> <span class="o">%</span><span class="n">BUILDDIR</span><span class="o">%</span> <span class="o">%</span><span class="n">SPHINXOPTS</span><span class="o">%</span> <span class="o">%</span><span class="n">O</span><span class="o">%</span>
+<span class="n">goto</span> <span class="n">end</span>
+
+<span class="p">:</span><span class="n">help</span>
+<span class="o">%</span><span class="n">SPHINXBUILD</span><span class="o">%</span> <span class="o">-</span><span class="n">M</span> <span class="n">help</span> <span class="o">%</span><span class="n">SOURCEDIR</span><span class="o">%</span> <span class="o">%</span><span class="n">BUILDDIR</span><span class="o">%</span> <span class="o">%</span><span class="n">SPHINXOPTS</span><span class="o">%</span> <span class="o">%</span><span class="n">O</span><span class="o">%</span>
+
+<span class="p">:</span><span class="n">end</span>
+<span class="n">popd</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="nojekyll">
+<h3>.nojekyllファイルの作成<a class="headerlink" href="#nojekyll" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">GitHib PagesはJekyIIが使われており、_staticなどにあるファイルを読み取ることができないのでsphinxのcssが適用されません。</div>
+<div class="line">そこでリポジトリの直下に.nojekyllというから空ファイルを配置する必要があります。</div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>ソースの公開<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">上記の設定が終われば、後はビルドしてプッシュするだけです。</div>
+<div class="line"><a class="reference external" href="https:/">https:/</a>/[ユーザ名].github.io/[リポジトリ名]/index.html にアクセスすると作成したドキュメントが確認できます。</div>
+</div>
+</div>
 </div>
 </div>
 

@@ -3,5 +3,9 @@
 ## Sphinxのビルド
 ```
 make html
-cp -r build/html/ docs
+```
+
+## 自動ビルド
+```
+sphinx-autobuild -b html source docs/html
 ```
