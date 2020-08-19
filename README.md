@@ -1,2 +1,7 @@
 # memorandum
-備忘録
+
+## Sphinxのビルド
+```
+make html
+cp -r build/html docs
+```
