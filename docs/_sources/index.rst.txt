@@ -11,10 +11,22 @@
    :caption: Contents:
 
    sphinx
-   vi
-   shell
-   python
+   aws
+   chef
+   chrome
+   coding
+   excel
+   github
+   javascript
+   linux
+   markdown
+   mysql
    numpy
-   pandas
-   pytorch
-   keras
+   python
+   sakura
+   sql
+   teraterm
+   vagrant
+   vscode
+   vuejs
+   windows

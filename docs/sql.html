@@ -1,0 +1,384 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SQLスタイルガイド &mdash; memorandum 1.0.0 ドキュメント</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="teraterm" href="teraterm.html" />
+    <link rel="prev" title="サクラエディタ" href="sakura.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> memorandum
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sphinx.html">Sphinx入門</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aws.html">AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chef.html">Chef</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chrome.html">Chrome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coding.html">コーディング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="excel.html">Excel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github.html">GigHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javascript.html">JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdownの書き方</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mysql.html">MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.html">NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Pythonコーディング規約(PEP8)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sakura.html">サクラエディタ</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SQLスタイルガイド</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">予約語/関数は大文字にする</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">インデントはスペース2で揃える</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">SQLの特定の予約の後は改行する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">1カラム1行にする</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#and-or">条件のAND/ORは先頭に置く</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">サブクエリは字下げする</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#case">CASE文は各予約語の前で字下げして改行する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#joinon">JOIN句は字下げして、ONはさらに字下げする</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">セミコロン(;)は最終行に置く</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="teraterm.html">teraterm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vagrant.html">Vagrant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vscode.html">Visual Studio Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vuejs.html">Vue.js</a></li>
+<li class="toctree-l1"><a class="reference internal" href="windows.html">Windows</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">memorandum</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>SQLスタイルガイド</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/sql.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sql">
+<h1>SQLスタイルガイド<a class="headerlink" href="#sql" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>QiitaにSQLスタイルガイドの良い記事があったので備忘録にまとめる。<br /><a class="reference external" href="https://qiita.com/taise/items/18c14d9b01a5dfd6d35e">SQLスタイルガイド</a></p>
+<div class="section" id="id1">
+<h2>予約語/関数は大文字にする<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>予約語と関数はそれ他と区別がつきやすいように大文字にする。<br />ex) SELECE、FROM、WHERE</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span>
+  <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">sushi_post_count</span>
+<span class="k">FROM</span>
+  <span class="n">microposts</span>
+<span class="k">WHERE</span>
+  <span class="n">content</span> <span class="k">LIKE</span> <span class="s1">&#39;%:sushi:%&#39;</span>
+<span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>インデントはスペース2で揃える<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Pythonのようにインデントでブロックを示しているわけではないので推奨</p>
+</div>
+<div class="section" id="id3">
+<h2>SQLの特定の予約の後は改行する<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>基本的には以下の予約語の後は改行する。</p>
+<ul class="simple">
+<li><p>SELECT</p></li>
+<li><p>FROM</p></li>
+<li><p>WHERE</p></li>
+<li><p>GROUP BY</p></li>
+<li><p>ORDER BY</p></li>
+</ul>
+<p>SELECT句やWHERE句の中で利用される関数(COUNTやBETWEENなど)については、
+同じ予約語でも改行の必要はない。<br />改行が増えすぎて逆に読みづらくなります。</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span>
+  <span class="nb">DATE</span><span class="p">(</span><span class="n">created_at</span><span class="p">)</span> <span class="k">AS</span> <span class="n">created_date</span><span class="p">,</span>
+  <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">post_count</span>
+<span class="k">FROM</span>
+  <span class="n">posts</span>
+<span class="k">WHERE</span>
+  <span class="n">created_at</span> <span class="k">BETWEEN</span> <span class="s1">&#39;2015-12-01&#39;</span> <span class="k">AND</span> <span class="s1">&#39;2015-12-10&#39;</span>
+<span class="k">GROUP</span> <span class="k">BY</span>
+  <span class="n">created_date</span>
+<span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>1カラム1行にする<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>SELECT、WHEREで指定するカラムや条件式は1行に1つまでとする。</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span>
+  <span class="nb">DATE</span><span class="p">(</span><span class="n">created_at</span><span class="p">)</span> <span class="k">AS</span> <span class="n">created_date</span><span class="p">,</span>
+  <span class="n">user_id</span><span class="p">,</span>
+  <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">post_count</span>
+<span class="k">FROM</span>
+  <span class="n">posts</span>
+<span class="k">WHERE</span>
+  <span class="n">created_at</span> <span class="k">BETWEEN</span> <span class="s1">&#39;2015-12-01&#39;</span> <span class="k">AND</span> <span class="s1">&#39;2015-12-10&#39;</span>
+<span class="k">GROUP</span> <span class="k">BY</span>
+  <span class="n">created_date</span><span class="p">,</span>
+  <span class="n">user_id</span>
+<span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="and-or">
+<h2>条件のAND/ORは先頭に置く<a class="headerlink" href="#and-or" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>AND/ORを先頭に置くと、その行がどちらに該当するのか分かりやすい。</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span>
+  <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">user_count</span>
+<span class="k">FROM</span>
+  <span class="k">user</span>
+<span class="k">WHERE</span>
+  <span class="n">created_at</span> <span class="o">&gt;=</span> <span class="s1">&#39;2015-12-01&#39;</span>
+  <span class="k">AND</span> <span class="n">status</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;signup&#39;</span><span class="p">,</span> <span class="s1">&#39;available&#39;</span><span class="p">)</span>
+  <span class="k">AND</span> <span class="k">admin</span> <span class="k">IS</span> <span class="k">NULL</span>
+<span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>サブクエリは字下げする<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>サブクエリのインデントを下げることで、サブクエリの部分を判別しやすくする。</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span>
+  <span class="n">post_count</span><span class="p">,</span>
+  <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">freq</span>
+<span class="k">FROM</span>
+  <span class="p">(</span>
+    <span class="k">SELECT</span>
+      <span class="n">user_id</span><span class="p">,</span>
+      <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="n">post_count</span>
+    <span class="k">FROM</span>
+      <span class="n">microposts</span>
+    <span class="k">GROUP</span> <span class="k">BY</span>
+      <span class="n">user_id</span>
+  <span class="p">)</span>
+<span class="k">GROUP</span> <span class="k">BY</span>
+  <span class="n">post_count</span>
+<span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="case">
+<h2>CASE文は各予約語の前で字下げして改行する<a class="headerlink" href="#case" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>字下げすることでどこまで条件式か分かりやすくなる。</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">CASE</span>
+  <span class="k">WHEN</span> <span class="n">hoge</span>
+    <span class="k">THEN</span> <span class="s1">&#39;hoge&#39;</span>
+  <span class="k">WHEN</span> <span class="n">piyo</span>
+    <span class="k">THEN</span> <span class="s1">&#39;piyo&#39;</span>
+  <span class="k">ELSE</span> <span class="s1">&#39;other&#39;</span>
+<span class="k">END</span> 
+</pre></div>
+</div>
+</div>
+<div class="section" id="joinon">
+<h2>JOIN句は字下げして、ONはさらに字下げする<a class="headerlink" href="#joinon" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>いろいろな流派があるらしい。。。</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span>
+  <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">post_count</span>
+<span class="k">FROM</span>
+  <span class="n">microposts</span> <span class="k">AS</span> <span class="n">m</span>
+  <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">users</span> <span class="k">AS</span> <span class="n">u</span>
+    <span class="k">ON</span> <span class="n">m</span><span class="p">.</span><span class="n">user_id</span> <span class="o">=</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span>
+<span class="k">WHERE</span>
+  <span class="n">u</span><span class="p">.</span><span class="n">status</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;signup&#39;</span><span class="p">,</span> <span class="s1">&#39;available&#39;</span><span class="p">)</span>
+<span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>セミコロン(;)は最終行に置く<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>複数のSQLがあるときに、どこで終わっているか分かりやすくなる。</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span>
+  <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">sushi_beer_post_count</span>
+<span class="k">FROM</span>
+  <span class="n">microposts</span>
+<span class="k">WHERE</span>
+  <span class="nb">DATE</span><span class="p">(</span><span class="n">created_at</span><span class="p">)</span> <span class="o">=</span> <span class="nb">DATE</span><span class="p">(</span><span class="n">UTC_TIMESTAMP</span><span class="p">())</span>
+  <span class="k">AND</span> <span class="n">content</span> <span class="n">REGEXP</span><span class="p">(</span><span class="s1">&#39;:(sushi|beer):&#39;</span><span class="p">)</span>
+<span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="teraterm.html" class="btn btn-neutral float-right" title="teraterm" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sakura.html" class="btn btn-neutral float-left" title="サクラエディタ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 著作権 2020, shirox64
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

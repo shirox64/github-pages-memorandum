@@ -37,8 +37,8 @@
     
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
-    <link rel="next" title="pandas" href="pandas.html" />
-    <link rel="prev" title="Python" href="python.html" /> 
+    <link rel="next" title="Pythonコーディング規約(PEP8)" href="python.html" />
+    <link rel="prev" title="MySQL" href="mysql.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,16 +86,38 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="sphinx.html">Sphinx入門</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vi.html">vi入門</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell.html">Shell Script入門</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aws.html">AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chef.html">Chef</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chrome.html">Chrome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coding.html">コーディング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="excel.html">Excel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github.html">GigHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javascript.html">JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdownの書き方</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mysql.html">MySQL</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">NumPy</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">後日更新予定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">NumPyとは</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">インポート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">1次元配列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">2次元配列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">変形</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">データ型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">インデックスとスライス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">データ再代入</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">深いコピー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">数列を返す</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">乱数</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="pandas.html">pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pytorch.html">PyTorch入門</a></li>
-<li class="toctree-l1"><a class="reference internal" href="keras.html">Keras入門</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Pythonコーディング規約(PEP8)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sakura.html">サクラエディタ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sql.html">SQLスタイルガイド</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teraterm.html">teraterm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vagrant.html">Vagrant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vscode.html">Visual Studio Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vuejs.html">Vue.js</a></li>
+<li class="toctree-l1"><a class="reference internal" href="windows.html">Windows</a></li>
 </ul>
 
             
@@ -148,7 +170,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/numpy.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/numpy.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -164,7 +186,159 @@
   <div class="section" id="numpy">
 <h1>NumPy<a class="headerlink" href="#numpy" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="id1">
-<h2>後日更新予定<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>NumPyとは<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>NumPyは科学技術計算に特化したサードパーティ製パッケージで配列や行列を効率よく扱える。</p>
+</div>
+<div class="section" id="id2">
+<h2>インポート<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># NumPyのインポート</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>1次元配列<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1次元配列作成</span>
+<span class="n">array_1d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="n">array_1d</span>
+<span class="c1"># array([1, 2, 3])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">array_1d</span><span class="p">)</span>
+<span class="c1"># [1, 2, 3]</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">array_1d</span><span class="p">)</span>
+<span class="c1"># numpy.ndarray</span>
+
+<span class="n">array_1d</span><span class="o">.</span><span class="n">shape</span>
+<span class="c1"># (3,)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>2次元配列<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2次元配列作成</span>
+<span class="n">array_2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+
+<span class="n">array_2d</span>
+<span class="c1"># array([[1, 2, 3],</span>
+<span class="c1">#        [4, 5, 6]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">array_2d</span><span class="p">)</span>
+<span class="c1"># [[1, 2, 3]</span>
+<span class="c1">#  [4, 5, 6]]</span>
+
+<span class="n">array_2d</span><span class="o">.</span><span class="n">shape</span>
+<span class="c1"># (2, 3)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>変形<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="n">array1</span>
+<span class="c1"># array([1, 2, 3, 4, 5, 6])</span>
+
+<span class="c1"># 1次元配列を2次元配列に変形</span>
+<span class="n">array2</span> <span class="o">=</span> <span class="n">array1</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">array2</span>
+<span class="c1"># array([[1, 2, 3],</span>
+<span class="c1">#        [4, 5, 6]])</span>
+
+<span class="c1"># 変形する要素数が合わない場合は、エラーになる</span>
+<span class="n">array3</span> <span class="o">=</span> <span class="n">array1</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="c1"># ValueError: cannot reshape array of size 6 into shape (3,4)</span>
+
+<span class="c1"># 1次元配列に戻す *参照を渡す</span>
+<span class="n">array4</span> <span class="o">=</span> <span class="n">array2</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="n">array4</span>
+<span class="c1"># array([1, 2, 3, 4, 5, 6])</span>
+
+<span class="c1"># 1次元配列に戻す *コピーを返す</span>
+<span class="n">array5</span> <span class="o">=</span> <span class="n">array2</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="c1"># array([1, 2, 3, 4, 5, 6])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>データ型<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># データ型を指定しない場合は、自動で設定される</span>
+<span class="n">array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">array1</span><span class="o">.</span><span class="n">dtype</span>
+<span class="c1"># dtype(&#39;int32&#39;)</span>
+
+<span class="c1"># データ型を指定</span>
+<span class="n">array2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">)</span>
+<span class="n">array2</span><span class="o">.</span><span class="n">dtype</span>
+<span class="c1"># dtype(&#39;int16&#39;)</span>
+
+<span class="c1"># 配列作成後にデータ型を変更</span>
+<span class="n">array2</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span>
+<span class="c1"># array([1, 2, 3], dtype=float16)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>インデックスとスライス<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">array1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># 1</span>
+<span class="n">array1</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="c1"># array([2, 3])</span>
+<span class="n">array1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="c1"># 3</span>
+
+<span class="n">array2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+<span class="n">array2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># array([1, 2, 3])</span>
+<span class="n">array2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="c1"># 4</span>
+<span class="n">array2</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="c1"># array([3, 6])</span>
+<span class="n">array2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+<span class="c1"># array([4, 5, 6])</span>
+<span class="n">array2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">:]</span>
+<span class="c1"># array([2, 3])</span>
+<span class="n">arary2</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+<span class="c1"># array([[1, 3],</span>
+<span class="c1">#        [4, 6]])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>データ再代入<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">array1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">array1</span>
+<span class="c1"># array([1, 2, 4])</span>
+
+<span class="n">array2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+<span class="n">array2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">array2</span>
+<span class="c1"># array([[1, 2, 3],</span>
+<span class="c1">#        [4, 5, 7]])</span>
+
+<span class="n">array2</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">array2</span>
+<span class="c1"># array([[1, 2, 8],</span>
+<span class="c1">#        [4, 5, 8]])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>深いコピー<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Python標準のリストではスライスした結果はコピーが渡されるが、NumPyではスライスした結果は参照が渡されるので注意。</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>数列を返す<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>後日更新予定</p>
+</div>
+<div class="section" id="id11">
+<h2>乱数<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>後日更新予定</p>
 </div>
 </div>
 
@@ -176,10 +350,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pandas.html" class="btn btn-neutral float-right" title="pandas" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="python.html" class="btn btn-neutral float-right" title="Pythonコーディング規約(PEP8)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="python.html" class="btn btn-neutral float-left" title="Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mysql.html" class="btn btn-neutral float-left" title="MySQL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

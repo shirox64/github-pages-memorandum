@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Markdownの書き方 &mdash; memorandum 1.0.0 ドキュメント</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="MySQL" href="mysql.html" />
+    <link rel="prev" title="Linux" href="linux.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> memorandum
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sphinx.html">Sphinx入門</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aws.html">AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chef.html">Chef</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chrome.html">Chrome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coding.html">コーディング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="excel.html">Excel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github.html">GigHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javascript.html">JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux.html">Linux</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Markdownの書き方</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">見出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">リスト</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">番号付きリスト</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">改行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">空行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">コード挿入</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">リンクの挿入</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">引用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">テーブル挿入</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">打消し線</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mysql.html">MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.html">NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Pythonコーディング規約(PEP8)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sakura.html">サクラエディタ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sql.html">SQLスタイルガイド</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teraterm.html">teraterm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vagrant.html">Vagrant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vscode.html">Visual Studio Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vuejs.html">Vue.js</a></li>
+<li class="toctree-l1"><a class="reference internal" href="windows.html">Windows</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">memorandum</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Markdownの書き方</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/markdown.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="markdown">
+<h1>Markdownの書き方<a class="headerlink" href="#markdown" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="id1">
+<h2>見出し<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>先頭に「#」をつける。「#」の後はスペースを必ず挿入する。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 見出しh1  </span>
+<span class="c1">## 見出しh2  </span>
+<span class="c1">### 見出しh3  </span>
+<span class="c1">#### 見出しh4  </span>
+<span class="c1">##### 見出しh5  </span>
+<span class="c1">###### 見出しh6  </span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>リスト<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>「*」または「-」を使用する。箇条書き中はタブでインデントを下げられる。<br />リストに[ ]または[x]を加えるとチャックボックスになる。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">リスト</span>
+<span class="o">*</span> <span class="n">リスト</span>
+<span class="o">*</span> <span class="p">[</span> <span class="p">]</span> <span class="n">リスト</span>
+<span class="o">*</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">リスト</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>番号付きリスト<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">番号付き</span>
+<span class="mf">2.</span> <span class="n">番号付き</span>
+<span class="mf">3.</span> <span class="n">番号付き</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>改行<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>行末に半角スペースを2つ挿入する。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1行目__ ← 行末に半角スペース2つ
+2行目__
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>空行<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>brタグを使用する。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="n">行目</span>
+<span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span>
+<span class="mi">3</span><span class="n">行目</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>コード挿入<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>バッククオート3つで囲む「```」。<br />結果</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">コード</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>リンクの挿入<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">タイトル</span><span class="p">](</span><span class="n">URL</span><span class="p">)</span>
+
+<span class="p">(</span><span class="n">例</span><span class="p">)</span>
+<span class="p">[</span><span class="n">GitHub</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>結果<br /><a class="reference external" href="https://github.com/">GitHub</a></p>
+</div>
+<div class="section" id="id8">
+<h2>引用<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">引用1</span>
+<span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">引用2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>テーブル挿入<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>下記の書き方でテーブルが表記できる。<br />2行目のコロン(:)の位置で左寄せ、中央寄せ、右寄せを指定できる。<br />コロンが無ければ左寄せになる。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span><span class="n">商品</span><span class="o">|</span><span class="n">種別</span><span class="o">|</span><span class="n">金額</span><span class="o">|</span>
+<span class="o">|</span><span class="p">:</span><span class="o">---|</span><span class="p">:</span><span class="o">--</span><span class="p">:</span><span class="o">|---</span><span class="p">:</span><span class="o">|</span>
+<span class="o">|</span><span class="n">ボンゴレビアンコ</span><span class="o">|</span><span class="n">パスタ</span><span class="o">|</span><span class="mi">800</span><span class="o">|</span>
+<span class="o">|</span><span class="n">マルゲリータ</span><span class="o">|</span><span class="n">ピザ</span><span class="o">|</span><span class="mi">1000</span><span class="o">|</span>
+<span class="o">|</span><span class="n">白ワイン</span><span class="o">|</span><span class="n">ドリンク</span><span class="o">|</span><span class="mi">500</span><span class="o">|</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="left">商品</th>
+<th align="center">種別</th>
+<th align="right">金額</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">ボンゴレビアンコ</td>
+<td align="center">パスタ</td>
+<td align="right">800</td>
+</tr>
+<tr>
+<td align="left">マルゲリータ</td>
+<td align="center">ピザ</td>
+<td align="right">1000</td>
+</tr>
+<tr>
+<td align="left">白ワイン</td>
+<td align="center">ドリンク</td>
+<td align="right">500</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="id10">
+<h2>打消し線<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>チルダ(~)2つで囲む。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">~~</span><span class="n">打消されます</span><span class="o">~~</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mysql.html" class="btn btn-neutral float-right" title="MySQL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="linux.html" class="btn btn-neutral float-left" title="Linux" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 著作権 2020, shirox64
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
