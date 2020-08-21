@@ -23,6 +23,7 @@
    mysql
    numpy
    python
+   python_style
    sakura
    sql
    teraterm
@@ -30,3 +31,4 @@
    vscode
    vuejs
    windows
+   mac

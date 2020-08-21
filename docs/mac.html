@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>コーディング &mdash; memorandum 1.0.0 ドキュメント</title>
+  <title>Mac使い方 &mdash; memorandum 1.0.0 ドキュメント</title>
   
 
   
@@ -37,8 +37,7 @@
     
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
-    <link rel="next" title="Excel" href="excel.html" />
-    <link rel="prev" title="Chrome" href="chrome.html" /> 
+    <link rel="prev" title="Windows" href="windows.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -89,13 +88,7 @@
 <li class="toctree-l1"><a class="reference internal" href="aws.html">AWS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chef.html">Chef</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chrome.html">Chrome</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">コーディング</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">コーディングの心得5か条</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">良いコードの書き方</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">良いコードの定義</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">コード分割のメリット</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="coding.html">コーディング</a></li>
 <li class="toctree-l1"><a class="reference internal" href="excel.html">Excel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="github.html">GigHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="javascript.html">JavaScript</a></li>
@@ -112,7 +105,20 @@
 <li class="toctree-l1"><a class="reference internal" href="vscode.html">Visual Studio Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vuejs.html">Vue.js</a></li>
 <li class="toctree-l1"><a class="reference internal" href="windows.html">Windows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mac.html">Mac使い方</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Mac使い方</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#windowsmac">WindowsからMacに移行した時に戸惑ったキー操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#finder">Finder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Finderのタイトル部分にフルパスを表示させる</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">パス指定のショートカットキー</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#spotlight">Spotlight使い方</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">起動方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">使い方</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
             
@@ -159,13 +165,13 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>コーディング</li>
+      <li>Mac使い方</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/coding.md.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/mac.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -178,48 +184,49 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="id1">
-<h1>コーディング<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="section" id="id2">
-<h2>コーディングの心得5か条<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<ol class="simple">
-<li><p>見やすさを重視する</p></li>
-<li><p>ネーミングを分かりやすく</p></li>
-<li><p>サンプルを鵜呑みにしない</p></li>
-<li><p>同じコードを二度書かない</p></li>
-<li><p>役割は一つに</p></li>
-</ol>
-</div>
-<div class="section" id="id3">
-<h2>良いコードの書き方<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+  <div class="section" id="mac">
+<h1>Mac使い方<a class="headerlink" href="#mac" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="windowsmac">
+<h2>WindowsからMacに移行した時に戸惑ったキー操作<a class="headerlink" href="#windowsmac" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li><p>変数のスコープを小さくする</p></li>
-<li><p>変数は必要最低限にする</p></li>
-<li><p>分岐をシンプルにする(ネストを深くしない)</p></li>
-<li><p>クラス、ファンクションを大きくしすぎない</p></li>
-<li><p>テストしやすいコードを書く(忘れがちだけど重要)</p></li>
+<li><p>Windowsの「ctrl」キーに該当するキー<br /><code class="docutils literal notranslate"><span class="pre">「command」キー</span></code></p></li>
+<li><p>「半角/全角」の切替<br /><code class="docutils literal notranslate"><span class="pre">「英数」キー、「かな」キー</span></code></p></li>
+<li><p>「Home」キー<br /><code class="docutils literal notranslate"><span class="pre">「command」キー</span> <span class="pre">+</span> <span class="pre">左矢印</span></code></p></li>
+<li><p>スクリーンショットのショートカット<br /><code class="docutils literal notranslate"><span class="pre">「command」キー</span> <span class="pre">+</span> <span class="pre">「shift」キー</span> <span class="pre">+</span> <span class="pre">「3」</span></code></p></li>
+<li><p>アプリ終了(Alt + F4)<br /><code class="docutils literal notranslate"><span class="pre">「command」キー</span> <span class="pre">+</span> <span class="pre">「q」</span></code></p></li>
+<li><p>右クリック<br /><code class="docutils literal notranslate"><span class="pre">「control」キー</span> <span class="pre">+</span> <span class="pre">クリック</span></code><br />または<br /><code class="docutils literal notranslate"><span class="pre">トラックパッドで2本指でクリック</span></code></p></li>
 </ul>
+</div>
+<div class="section" id="finder">
+<h2>Finder<a class="headerlink" href="#finder" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id1">
+<h3>Finderのタイトル部分にフルパスを表示させる<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>1.ターミナルを起動<br />Finder → アプリケーション → ユーティリティ → ターミナルを起動<br />2.ターミナルに次のコマンドを入力</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ defaults write com.apple.finder _FXShowPosixPathInTitle -boolean true
+</pre></div>
+</div>
+<p>3.再起動<br />Finderを再度立ち上げるとタイトル部分にパスが表示される</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ killall Finder
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>パス指定のショートカットキー<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><p>パスを指定する<br /><code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">+</span> <span class="pre">shift</span> <span class="pre">+</span> <span class="pre">g</span></code></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="spotlight">
+<h2>Spotlight使い方<a class="headerlink" href="#spotlight" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id3">
+<h3>起動方法<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">「command」キー</span> <span class="pre">+</span> <span class="pre">スペースバー</span></code></p>
 </div>
 <div class="section" id="id4">
-<h2>良いコードの定義<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<ul class="simple">
-<li><p>正確に動作すること</p></li>
-<li><p>素早く効率的に動作すること</p></li>
-<li><p>防御的でバグを生み出しにくいこと</p></li>
-<li><p>テストコードが書きやすいこと</p></li>
-<li><p>メンテナンスが行いやすいこと</p></li>
-<li><p>他人が見ても理解可能であること</p></li>
-<li><p>無駄な部分がないこと</p></li>
-</ul>
+<h3>使い方<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ウィンドウにapp名を入力してEnter<br />(例) terminal.app</p>
 </div>
-<div class="section" id="id5">
-<h2>コード分割のメリット<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<ul class="simple">
-<li><p>可読性向上</p></li>
-<li><p>メンテナンス性向上</p></li>
-<li><p>再利用性向上</p></li>
-<li><p>テストコードを書きやすい</p></li>
-</ul>
 </div>
 </div>
 
@@ -231,10 +238,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="excel.html" class="btn btn-neutral float-right" title="Excel" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="chrome.html" class="btn btn-neutral float-left" title="Chrome" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="windows.html" class="btn btn-neutral float-left" title="Windows" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
