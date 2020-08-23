@@ -10,7 +10,6 @@
    :maxdepth: 2
    :caption: Contents:
 
-   sphinx
    aws
    chef
    chrome
@@ -21,9 +20,6 @@
    linux
    markdown
    mysql
-   numpy
-   python
-   python_style
    sakura
    sql
    teraterm
