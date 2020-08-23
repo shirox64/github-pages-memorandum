@@ -1,5 +1,5 @@
 # memorandum
-https://shirox64.github.io/memorandum/index.html
+https://shirox64.github.io/github-pages-memorandum/index.html
 
 ## Sphinxのビルド
 ```
